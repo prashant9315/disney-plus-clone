@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
-import Category from "./Category";
+import Views from "./Views";
 
 function Home() {
   return (
     <Container>
       <ImgSlider />
-      <Category />
+      <Views />
     </Container>
   );
 }
@@ -17,6 +17,8 @@ export default Home;
 const Container = styled.main`
    min-height: calc(100vh - 70px); 
    padding: 0 calc(3.5vw + 5px) ; 
+   display:flex;
+   flex-direction:column;
    position: relative;
    overflow-x:hidden;
     
