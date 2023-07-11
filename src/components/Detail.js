@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 
-function Detail() {
+const Detail = (props) => {
   const { id } = useParams();
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     // Grab the moive info from DB=
@@ -36,18 +36,18 @@ function Detail() {
           </ImageTitle>
           <Controls>
             <PlayButton>
-              <img src="/images/play-icon-black.png" />
+              <img src="/images/play-icon-black.png" alt="" />
               <span>PLAY</span>
             </PlayButton>
             <TrailerButton>
-              <img src="/images/play-icon-white.png" />
+              <img src="/images/play-icon-white.png" alt="" />
               <span>Trailer</span>
             </TrailerButton>
             <AddButton>
               <span>+</span>
             </AddButton>
             <GroupWatchButton>
-              <img src="/images/group-icon.png" />
+              <img src="/images/group-icon.png" alt="" />
             </GroupWatchButton>
           </Controls>
           <SubTitle>{movie.Genres}</SubTitle>
@@ -56,7 +56,7 @@ function Detail() {
       )}
     </Container>
   );
-}
+};
 
 export default Detail;
 
